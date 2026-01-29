@@ -1,59 +1,259 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Hyperlink Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Project Laravel untuk mengelola dan membangun aplikasi web modern.
 
-## About Laravel
+## 📋 Requirements
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sebelum memulai, pastikan sistem Anda sudah terinstall:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- PHP >= 8.2
+- Composer
+- Node.js >= 18.x & NPM
+- MySQL/MariaDB atau database lainnya
+- Laragon/XAMPP/WAMP (opsional untuk Windows)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Panduan Instalasi
 
-## Learning Laravel
+### 1. Clone Repository
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+```bash
+git clone https://github.com/adafi13/hyperlink.git
+cd hyperlink
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. Install Dependencies PHP
 
-## Laravel Sponsors
+```bash
+composer install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 3. Install Dependencies JavaScript
 
-### Premium Partners
+```bash
+npm install
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 4. Setup Environment
 
-## Contributing
+Salin file `.env.example` menjadi `.env`:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Windows (Command Prompt)
+copy .env.example .env
 
-## Code of Conduct
+# Windows (PowerShell) / Linux / Mac
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 5. Generate Application Key
 
-## Security Vulnerabilities
+```bash
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 6. Konfigurasi Database
 
-## License
+Edit file `.env` dan sesuaikan dengan konfigurasi database Anda:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=hyperlink
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 7. Buat Database
+
+Buat database baru dengan nama sesuai `DB_DATABASE` di phpMyAdmin atau MySQL:
+
+```sql
+CREATE DATABASE hyperlink;
+```
+
+### 8. Jalankan Migrasi
+
+```bash
+php artisan migrate
+```
+
+Jika ingin dengan sample data (seeder):
+
+```bash
+php artisan migrate --seed
+```
+
+### 9. Build Assets Frontend
+
+Untuk development:
+
+```bash
+npm run dev
+```
+
+Untuk production:
+
+```bash
+npm run build
+```
+
+## 🏃 Menjalankan Aplikasi
+
+### Opsi 1: Menggunakan Laravel Development Server
+
+```bash
+php artisan serve
+```
+
+Aplikasi akan berjalan di: `http://localhost:8000`
+
+### Opsi 2: Dengan Vite Development Server (Hot Reload)
+
+Buka 2 terminal:
+
+**Terminal 1** - Laravel Server:
+```bash
+php artisan serve
+```
+
+**Terminal 2** - Vite Server:
+```bash
+npm run dev
+```
+
+Akses aplikasi di: `http://localhost:8000`
+
+### Opsi 3: Menggunakan Laragon
+
+Jika menggunakan Laragon:
+1. Pastikan project berada di folder `c:\laragon\www\hyperlink`
+2. Start Laragon (Apache & MySQL)
+3. Akses melalui: `http://hyperlink.test`
+
+## 📝 Perintah Berguna
+
+### Cache Management
+
+```bash
+# Clear semua cache
+php artisan optimize:clear
+
+# Clear cache spesifik
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+
+# Optimize untuk production
+php artisan optimize
+```
+
+### Database
+
+```bash
+# Rollback migrasi terakhir
+php artisan migrate:rollback
+
+# Reset semua migrasi
+php artisan migrate:reset
+
+# Fresh migration dengan seeder
+php artisan migrate:fresh --seed
+```
+
+### Testing
+
+```bash
+# Jalankan semua test
+php artisan test
+
+# Test spesifik
+php artisan test --filter ExampleTest
+```
+
+## 📁 Struktur Folder Penting
+
+```
+hyperlink/
+├── app/                    # Kode aplikasi utama
+│   ├── Http/Controllers/   # Controllers
+│   ├── Models/            # Eloquent Models
+│   └── Providers/         # Service Providers
+├── config/                # File konfigurasi
+├── database/
+│   ├── migrations/        # Database migrations
+│   └── seeders/          # Database seeders
+├── public/               # Public assets & entry point
+├── resources/
+│   ├── css/             # Stylesheet
+│   ├── js/              # JavaScript
+│   └── views/           # Blade templates
+├── routes/
+│   └── web.php          # Web routes
+└── storage/             # File storage & logs
+```
+
+## 🛠️ Troubleshooting
+
+### Error: "No application encryption key has been specified"
+
+```bash
+php artisan key:generate
+```
+
+### Error: Permission denied (Linux/Mac)
+
+```bash
+chmod -R 775 storage bootstrap/cache
+```
+
+### Error: NPM dependencies outdated
+
+```bash
+npm update
+# atau
+npm install
+```
+
+### Error: Database connection failed
+
+- Pastikan MySQL/MariaDB sudah running
+- Cek kredensial database di file `.env`
+- Pastikan database sudah dibuat
+
+### Assets tidak dimuat (CSS/JS)
+
+```bash
+# Rebuild assets
+npm run build
+
+# Atau jalankan dev server
+npm run dev
+```
+
+## 👥 Tim Development
+
+Untuk berkontribusi ke project:
+
+1. Buat branch baru untuk fitur/bug fix
+2. Commit perubahan dengan pesan yang jelas
+3. Push ke repository
+4. Buat Pull Request untuk review
+
+```bash
+git checkout -b feature/nama-fitur
+git add .
+git commit -m "Deskripsi perubahan"
+git push origin feature/nama-fitur
+```
+
+## 📚 Resources
+
+- [Laravel Documentation](https://laravel.com/docs)
+- [Laravel Bootcamp](https://bootcamp.laravel.com)
+- [Laracasts](https://laracasts.com)
+
+## 📄 License
+
+Project ini menggunakan [MIT license](https://opensource.org/licenses/MIT).
