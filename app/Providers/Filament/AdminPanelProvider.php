@@ -27,8 +27,14 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            // --- BAGIAN IDENTITAS & LOGO ---
+            ->favicon(asset('images/favicon.png')) // Mengubah ikon di tab browser admin
+            ->brandName('HyperLink') // Teks cadangan
+            ->brandLogo(asset('images/brosur-promo.png')) // Logo di halaman login & sidebar
+            ->brandLogoHeight('4rem') // Mengatur tinggi logo agar proporsional
+            // -----------------------------
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Amber, // Tema warna emas agar selaras dengan brosur
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

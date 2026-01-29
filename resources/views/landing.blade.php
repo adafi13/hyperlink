@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HyperLink - Internet Pilihan Anak Muda</title>
+
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
+
+    <meta property="og:title" content="HyperLink - Internet Pilihan Anak Muda">
+    <meta property="og:description" content="Nikmati koneksi 100% Fiber Optic dengan kuota tanpa batas. Bebas FUP, Bebas Lag.">
+    <meta property="og:image" content="{{ asset('images/brosur-promo.png') }}">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -174,7 +183,7 @@
 
     <div class="py-10 border-y border-white/5 bg-black/30 overflow-hidden">
         <div class="container mx-auto px-6 text-center mb-6">
-            <p class="text-xs font-bold text-gray-600 uppercase tracking-[0.3em]">Trusted by Modern Companies</p>
+            <p class="text-xs font-bold text-gray-600 uppercase tracking-[0.3em]">Trusted by Sekawan Putra Pratama</p>
         </div>
         <div class="flex w-[200%] animate-scroll text-gray-500 font-display font-bold text-2xl gap-20 opacity-40">
             <span>NETFLIX</span> <span>GOOGLE</span> <span>VALORANT</span> <span>SPOTIFY</span> <span>TWITCH</span> 
@@ -266,26 +275,32 @@
                         </div>
 
                         <ul class="space-y-2 text-sm text-gray-400 mb-6 flex-grow">
-    @php
-        $features = $package->features;
-        
-        // Cek jika data masih berupa teks JSON, maka kita ubah ke Array secara manual
-        if (is_string($features)) {
-            $features = json_decode($features, true);
-        }
-    @endphp
+                            @php
+                                $features = $package->features;
+                                
+                                if (is_string($features)) {
+                                    $decoded = json_decode($features, true);
+                                    if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+                                        $features = $decoded;
+                                    } else {
+                                        $features = explode(',', $features);
+                                    }
+                                }
+                            @endphp
 
-    @if(is_array($features) && count($features) > 0)
-        @foreach($features as $feature)
-            <li class="flex gap-2 items-start">
-                <span class="text-gold-500 mt-0.5">✓</span> 
-                <span class="text-xs leading-relaxed">{{ $feature }}</span>
-            </li>
-        @endforeach
-    @else
-        <li class="text-xs italic text-gray-600">Fitur belum diinput</li>
-    @endif
-</ul>
+                            @if(!empty($features) && (is_array($features) || is_object($features)))
+                                @foreach($features as $feature)
+                                    @if(!empty(trim($feature)))
+                                        <li class="flex gap-2 items-start">
+                                            <span class="text-gold-500 mt-0.5 font-bold">✓</span> 
+                                            <span class="text-xs leading-relaxed">{{ trim($feature) }}</span>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            @else
+                                <li class="text-xs italic text-gray-600">Fitur belum diinput</li>
+                            @endif
+                        </ul>
 
                         <a href="https://wa.me/6285156412702?text=Halo%20saya%20tertarik%20dengan%20paket%20{{ urlencode($package->name) }}" target="_blank" 
                            class="block w-full text-center py-3 rounded-xl font-bold transition-all
@@ -383,7 +398,6 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        // Trigger once on load
         reveal();
     </script>
 </body>

@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Package extends Model
 {
     protected $fillable = [
-        'name', 'speed', 'price', 'features', 'is_featured',
+        'name',
+        'speed',
+        'price',
+        'features',
+        'is_featured',
     ];
 
+    // Menggunakan 's' (casts) agar fitur otomatis menjadi array
     protected $casts = [
-    'features' => 'array',    // Wajib ada ini agar daftar fitur terbaca sebagai daftar, bukan teks
-    'is_featured' => 'boolean',
-];
+        'features' => 'array',
+        'is_featured' => 'boolean',
+    ];
 }
