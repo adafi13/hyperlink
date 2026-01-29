@@ -23,9 +23,9 @@
                             glow: 'rgba(234, 179, 8, 0.5)'
                         },
                         dark: {
-                            bg: '#050505',     // Hitam pekat modern
-                            surface: '#0A0A0A', // Permukaan kartu
-                            border: '#1F1F1F',  // Garis tepi halus
+                            bg: '#050505',     
+                            surface: '#0A0A0A', 
+                            border: '#1F1F1F',  
                         }
                     },
                     animation: {
@@ -54,7 +54,6 @@
         }
     </script>
     <style>
-        /* Modern Grid Background */
         .bg-grid {
             background-size: 50px 50px;
             background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
@@ -63,14 +62,12 @@
             -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
         }
 
-        /* Gold Gradient Text */
         .text-gold-gradient {
             background: linear-gradient(to bottom right, #FDE047, #CA8A04);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Dark Glass Card */
         .card-modern {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -83,7 +80,6 @@
             transform: translateY(-5px);
         }
 
-        /* Reveal Animation */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
@@ -103,8 +99,8 @@
             </a>
 
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
-                <a href="#plans" class="hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300">Plans</a>
-                <a href="#features" class="hover:text-white transition duration-300">Features</a>
+                <a href="#features" class="hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300">Features</a>
+                <a href="#plans" class="hover:text-white transition duration-300">Plans</a>
                 <a href="#coverage" class="hover:text-white transition duration-300">Coverage</a>
             </div>
 
@@ -167,78 +163,11 @@
         </div>
     </div>
 
-    <section id="plans" class="py-24 px-6 relative">
-        <div class="container mx-auto max-w-6xl relative z-10">
-            <div class="text-center mb-16 reveal">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Pilihan Paket</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4">Pilih Kecepatan Anda</h2>
-                <p class="text-gray-400">Paket fleksibel untuk setiap kebutuhan internet Anda.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                
-                <div class="reveal card-modern rounded-[2.5rem] p-8 group">
-                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-xl mb-6 text-gray-300 border border-white/10">⚡</div>
-                    <h3 class="font-display text-xl font-bold text-white">Starter</h3>
-                    <p class="text-gold-500 font-bold mb-4">500 Mbps</p>
-                    <div class="mb-6 pb-6 border-b border-white/10">
-                        <span class="text-sm text-gray-500">Mulai dari</span>
-                        <div class="text-3xl font-bold text-white">Rp 299K<span class="text-sm text-gray-500 font-normal">/bln</span></div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
-                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Unlimited Data</li>
-                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Free Installation</li>
-                        <li class="flex gap-3"><span class="text-gold-500">✓</span> WiFi 6 Router</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl border border-white/20 text-white font-bold hover:bg-white hover:text-black transition">Pilih Paket</button>
-                </div>
-
-                <div class="reveal relative p-1 rounded-[2.5rem] bg-gradient-to-b from-gold-400 to-gold-700 shadow-[0_0_40px_-10px_rgba(234,179,8,0.4)] transform md:scale-105 z-10">
-                    <div class="bg-dark-surface p-8 rounded-[2.4rem] h-full text-white relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-gold-500 text-black text-xs font-bold px-4 py-1.5 rounded-bl-2xl">POPULER</div>
-                        
-                        <div class="w-12 h-12 bg-gold-500/10 rounded-2xl flex items-center justify-center text-xl mb-6 text-gold-400 border border-gold-500/20">🚀</div>
-                        <h3 class="font-display text-xl font-bold text-white">Pro</h3>
-                        <p class="text-gold-400 font-bold mb-4">1 Gbps</p>
-                        <div class="mb-6 pb-6 border-b border-white/10">
-                            <span class="text-sm text-gray-400">Mulai dari</span>
-                            <div class="text-4xl font-bold text-white">Rp 499K<span class="text-sm text-gray-400 font-normal">/bln</span></div>
-                        </div>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex gap-3"><span class="text-gold-400">✓</span> <strong class="text-white">Priority Support</strong></li>
-                            <li class="flex gap-3"><span class="text-gold-400">✓</span> WiFi 6E Mesh System</li>
-                            <li class="flex gap-3"><span class="text-gold-400">✓</span> Static IP Address</li>
-                            <li class="flex gap-3"><span class="text-gold-400">✓</span> Unlimited Data</li>
-                        </ul>
-                        <button class="w-full py-4 rounded-xl bg-gold-500 text-black font-bold hover:bg-gold-400 transition shadow-[0_0_20px_rgba(234,179,8,0.4)]">Pilih Paket</button>
-                    </div>
-                </div>
-
-                <div class="reveal card-modern rounded-[2.5rem] p-8 group">
-                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-xl mb-6 text-gray-300 border border-white/10">👑</div>
-                    <h3 class="font-display text-xl font-bold text-white">Ultra</h3>
-                    <p class="text-gold-500 font-bold mb-4">10 Gbps</p>
-                    <div class="mb-6 pb-6 border-b border-white/10">
-                        <span class="text-sm text-gray-500">Mulai dari</span>
-                        <div class="text-3xl font-bold text-white">Rp 999K<span class="text-sm text-gray-500 font-normal">/bln</span></div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
-                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Dedicated Line</li>
-                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Enterprise Mesh</li>
-                        <li class="flex gap-3"><span class="text-gold-500">✓</span> SLA Guarantee</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl border border-white/20 text-white font-bold hover:bg-white hover:text-black transition">Pilih Paket</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <section id="features" class="py-24 px-6 relative">
         <div class="container mx-auto max-w-6xl">
             <div class="text-center mb-16 reveal">
                 <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Keunggulan Kami</span>
-                <h2 class="font-display text-4xl font-bold text-white mt-2">Mengapa Hyper Link?</h2>
+                <h2 class="font-display text-4xl font-bold text-white mt-2">Mengapa HyperLink?</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
@@ -250,7 +179,7 @@
                         <div>
                             <div class="w-12 h-12 bg-gold-500/10 text-gold-400 rounded-xl flex items-center justify-center text-2xl mb-4 border border-gold-500/20">⚡</div>
                             <h3 class="font-display text-2xl font-bold mb-2 text-white">Kecepatan Maksimal</h3>
-                            <p class="text-gray-400">Kecepatan simetris hingga 10 Gbps.</p>
+                            <p class="text-gray-400">Kecepatan simetris hingga 10 Gbps untuk upload dan download.</p>
                         </div>
                     </div>
 
@@ -269,7 +198,7 @@
                         <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl mb-4 text-white">🛡️</div>
                         <div>
                             <h3 class="font-display text-xl font-bold mb-2 text-white">Keamanan Enterprise</h3>
-                            <p class="text-gray-400 text-sm">Proteksi DDoS bawaan & deteksi ancaman.</p>
+                            <p class="text-gray-400 text-sm">Proteksi DDoS bawaan & deteksi ancaman 24/7.</p>
                         </div>
                     </div>
                 </div>
@@ -287,6 +216,73 @@
                         <p class="text-black/70 font-medium">Tim ahli siap membantu Anda kapan saja.</p>
                     </div>
                     <div class="text-8xl opacity-10 rotate-12 absolute -right-6 -bottom-6 group-hover:scale-110 transition duration-500">📞</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="py-24 px-6 relative bg-white/5 border-y border-white/5">
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Pilihan Paket</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4">Pilih Kecepatan Anda</h2>
+                <p class="text-gray-400">Paket fleksibel untuk setiap kebutuhan internet Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                
+                <div class="reveal card-modern rounded-[2.5rem] p-8 group">
+                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-xl mb-6 text-gray-300 border border-white/10">⚡</div>
+                    <h3 class="font-display text-xl font-bold text-white">Starter</h3>
+                    <p class="text-gold-500 font-bold mb-4">50 Mbps</p>
+                    <div class="mb-6 pb-6 border-b border-white/10">
+                        <span class="text-sm text-gray-500">Mulai dari</span>
+                        <div class="text-3xl font-bold text-white">Rp 250K<span class="text-sm text-gray-500 font-normal">/bln</span></div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Unlimited Data</li>
+                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Free Installation</li>
+                        <li class="flex gap-3"><span class="text-gold-500">✓</span> WiFi 6 Router</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pasang%20paket%20Starter" target="_blank" class="block w-full text-center py-3 rounded-xl border border-white/20 text-white font-bold hover:bg-white hover:text-black transition">Pilih Paket</a>
+                </div>
+
+                <div class="reveal relative p-1 rounded-[2.5rem] bg-gradient-to-b from-gold-400 to-gold-700 shadow-[0_0_40px_-10px_rgba(234,179,8,0.4)] transform md:scale-105 z-10">
+                    <div class="bg-dark-surface p-8 rounded-[2.4rem] h-full text-white relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-gold-500 text-black text-xs font-bold px-4 py-1.5 rounded-bl-2xl">POPULER</div>
+                        
+                        <div class="w-12 h-12 bg-gold-500/10 rounded-2xl flex items-center justify-center text-xl mb-6 text-gold-400 border border-gold-500/20">🚀</div>
+                        <h3 class="font-display text-xl font-bold text-white">Gamer Pro</h3>
+                        <p class="text-gold-400 font-bold mb-4">150 Mbps</p>
+                        <div class="mb-6 pb-6 border-b border-white/10">
+                            <span class="text-sm text-gray-400">Mulai dari</span>
+                            <div class="text-4xl font-bold text-white">Rp 450K<span class="text-sm text-gray-400 font-normal">/bln</span></div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex gap-3"><span class="text-gold-400">✓</span> <strong class="text-white">Priority Game Traffic</strong></li>
+                            <li class="flex gap-3"><span class="text-gold-400">✓</span> WiFi 6E Mesh System</li>
+                            <li class="flex gap-3"><span class="text-gold-400">✓</span> Public IP Dynamic</li>
+                            <li class="flex gap-3"><span class="text-gold-400">✓</span> Unlimited Data</li>
+                        </ul>
+                        <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pasang%20paket%20Gamer%20Pro" target="_blank" class="block w-full text-center py-4 rounded-xl bg-gold-500 text-black font-bold hover:bg-gold-400 transition shadow-[0_0_20px_rgba(234,179,8,0.4)]">Pilih Paket</a>
+                    </div>
+                </div>
+
+                <div class="reveal card-modern rounded-[2.5rem] p-8 group">
+                    <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-xl mb-6 text-gray-300 border border-white/10">👑</div>
+                    <h3 class="font-display text-xl font-bold text-white">Sultan</h3>
+                    <p class="text-gold-500 font-bold mb-4">1 Gbps</p>
+                    <div class="mb-6 pb-6 border-b border-white/10">
+                        <span class="text-sm text-gray-500">Mulai dari</span>
+                        <div class="text-3xl font-bold text-white">Rp 999K<span class="text-sm text-gray-500 font-normal">/bln</span></div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Dedicated Line</li>
+                        <li class="flex gap-3"><span class="text-gold-500">✓</span> Enterprise Mesh</li>
+                        <li class="flex gap-3"><span class="text-gold-500">✓</span> SLA Guarantee</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pasang%20paket%20Sultan" target="_blank" class="block w-full text-center py-3 rounded-xl border border-white/20 text-white font-bold hover:bg-white hover:text-black transition">Pilih Paket</a>
                 </div>
 
             </div>
@@ -312,11 +308,11 @@
                 <div class="relative z-10">
                     <span class="bg-white/10 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 inline-block backdrop-blur-md">Promo Terbatas</span>
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Siap untuk Upgrade?</h2>
-                    <p class="text-gray-400 max-w-lg mx-auto mb-10 text-lg">Dapatkan diskon 50% untuk 3 bulan pertama berlangganan paket Pro atau Ultra. Tanpa kontrak rumit.</p>
+                    <p class="text-gray-400 max-w-lg mx-auto mb-10 text-lg">Dapatkan diskon 50% untuk 3 bulan pertama berlangganan paket Gamer Pro atau Sultan. Tanpa kontrak rumit.</p>
                     
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <button class="px-10 py-4 bg-gold-500 text-black rounded-2xl font-bold shadow-[0_0_20px_rgba(234,179,8,0.4)] hover:shadow-[0_0_40px_rgba(234,179,8,0.6)] hover:-translate-y-1 transition">Mulai Gratis</button>
-                        <button class="px-10 py-4 bg-transparent border border-white/20 text-white rounded-2xl font-bold hover:bg-white/5 transition">Hubungi Sales</button>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="px-10 py-4 bg-gold-500 text-black rounded-2xl font-bold shadow-[0_0_20px_rgba(234,179,8,0.4)] hover:shadow-[0_0_40px_rgba(234,179,8,0.6)] hover:-translate-y-1 transition text-center">Mulai Gratis</a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="px-10 py-4 bg-transparent border border-white/20 text-white rounded-2xl font-bold hover:bg-white/5 transition text-center">Hubungi Sales</a>
                     </div>
                 </div>
             </div>
@@ -359,7 +355,7 @@
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-600">
-                <p>&copy; 2026 Hyper Link. All rights reserved.</p>
+                <p>&copy; 2026 HyperLink. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -377,6 +373,7 @@
             }
         }
         window.addEventListener("scroll", reveal);
+        // Trigger once on load
         reveal();
     </script>
 </body>
