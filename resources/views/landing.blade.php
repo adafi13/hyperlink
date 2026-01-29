@@ -14,7 +14,9 @@
     <meta property="og:type" content="website">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -22,7 +24,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Space Grotesk"', 'sans-serif'],
+                        display: ['"Montserrat"', 'sans-serif'],
                     },
                     colors: {
                         gold: {
@@ -40,7 +42,6 @@
                     animation: {
                         'blob': 'blob 10s infinite',
                         'shimmer': 'shimmer 2s linear infinite',
-                        'scroll': 'scroll 20s linear infinite',
                     },
                     keyframes: {
                         blob: {
@@ -52,10 +53,6 @@
                         shimmer: {
                             from: { backgroundPosition: '0 0' },
                             to: { backgroundPosition: '-200% 0' },
-                        },
-                        scroll: {
-                            from: { transform: 'translateX(0)' },
-                            to: { transform: 'translateX(-100%)' },
                         }
                     }
                 }
@@ -129,7 +126,7 @@
                 Internet Pilihan Anak Muda
             </div>
 
-            <h1 class="font-display text-5xl md:text-8xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+            <h1 class="font-display text-5xl md:text-8xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
                 HARGA YANG PAS <br>
                 <span class="text-gold-gradient drop-shadow-[0_0_20px_rgba(234,179,8,0.3)]">UNTUK KECEPATAN</span> <br>
                 TANPA BATAS.
@@ -181,13 +178,52 @@
         </div>
     </section>
 
-    <div class="py-10 border-y border-white/5 bg-black/30 overflow-hidden">
-        <div class="container mx-auto px-6 text-center mb-6">
-            <p class="text-xs font-bold text-gray-600 uppercase tracking-[0.3em]">Trusted by Sekawan Putra Pratama</p>
-        </div>
-        <div class="flex w-[200%] animate-scroll text-gray-500 font-display font-bold text-2xl gap-20 opacity-40">
-            <span>NETFLIX</span> <span>GOOGLE</span> <span>VALORANT</span> <span>SPOTIFY</span> <span>TWITCH</span> 
-            <span>DISCORD</span> <span>APPLE</span> <span>NETFLIX</span> <span>GOOGLE</span> <span>VALORANT</span>
+    <div class="py-12 border-y border-white/5 bg-black/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <p class="text-xs font-bold text-gray-600 uppercase tracking-[0.3em]">Trusted by Sekawan Putra Pratama</p>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-5xl mx-auto">
+                <!-- Netflix Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netflix.svg" alt="Netflix" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+                
+                <!-- Google Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg" alt="Google" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+                
+                <!-- Valorant Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/valorant.svg" alt="Valorant" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+                
+                <!-- Spotify Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg" alt="Spotify" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+                
+                <!-- Twitch Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitch.svg" alt="Twitch" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+                
+                <!-- Discord Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+                
+                <!-- Apple Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg" alt="Apple" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+                
+                <!-- YouTube Logo -->
+                <div class="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" class="w-16 h-16 md:w-20 md:h-20 brightness-0 invert">
+                </div>
+            </div>
         </div>
     </div>
 
