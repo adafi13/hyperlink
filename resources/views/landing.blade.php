@@ -43,6 +43,7 @@
                     animation: {
                         'blob': 'blob 10s infinite',
                         'shimmer': 'shimmer 2s linear infinite',
+                        'scroll': 'scroll 30s linear infinite',
                     },
                     keyframes: {
                         blob: {
@@ -54,6 +55,10 @@
                         shimmer: {
                             from: { backgroundPosition: '0 0' },
                             to: { backgroundPosition: '-200% 0' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }
                         }
                     }
                 }
@@ -138,7 +143,7 @@
                 <span class="text-gold-gradient drop-shadow-[0_0_20px_rgba(234,179,8,0.3)]">UNTUK KECEPATAN</span> <br>
                 TANPA BATAS.
             </h1>
-            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-center">
                 Nikmati koneksi <strong>100% Fiber Optic</strong> dengan kuota tanpa batas. Bebas FUP, Bebas Lag, Free Instalasi.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
@@ -148,12 +153,12 @@
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl max-w-4xl mx-auto">
-                <div><div class="text-4xl mb-2">⚡</div><p class="text-lg font-display font-bold text-white">100% Fiber Optic</p><p class="text-xs text-gray-400 mt-1">Koneksi lebih stabil</p></div>
-                <div class="border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0">
-                    <div class="text-4xl mb-2">♾️</div><p class="text-lg font-display font-bold text-gold-400">Kuota Tanpa Batas</p><p class="text-xs text-gray-400 mt-1">Bebas FUP sepuasnya</p>
+                <div class="text-center"><div><div class="text-4xl mb-2 text-center">⚡</div><p class="text-lg font-display font-bold text-white text-center">100% Fiber Optic</p><p class="text-xs text-gray-400 mt-1 text-center">Koneksi lebih stabil</p></div></div>
+                <div class="border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 text-center text-center">
+                    <div class="text-4xl mb-2 text-center text-center">♾️</div><p class="text-lg font-display font-bold text-gold-400 text-center">Kuota Tanpa Batas</p><p class="text-xs text-gray-400 mt-1 text-center">Bebas FUP sepuasnya</p>
                 </div>
-                <div class="border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0">
-                    <div class="text-4xl mb-2">🛠️</div><p class="text-lg font-display font-bold text-white">Free Instalasi</p><p class="text-xs text-gray-400 mt-1">Tanpa biaya pasang</p>
+                <div class="border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 text-center">
+                    <div class="text-4xl mb-2 text-center text-center">🛠️</div><p class="text-lg font-display font-bold text-white text-center">Free Instalasi</p><p class="text-xs text-gray-400 mt-1 text-center">Tanpa biaya pasang</p>
                 </div>
             </div>
         </div>
@@ -164,11 +169,11 @@
             <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-yellow-600 to-yellow-400 text-black p-8 md:p-12 text-center shadow-[0_0_60px_rgba(234,179,8,0.3)] border border-yellow-300/50">
                 <div class="absolute -top-24 -left-24 w-64 h-64 bg-white/30 rounded-full blur-3xl"></div>
                 <div class="relative z-10">
-                    <h2 class="font-display text-3xl md:text-5xl font-bold mb-4 italic">SPECIAL PROMO!</h2>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold mb-4 italic text-center uppercase">SPECIAL PROMO!</h2>
                     <div class="inline-block bg-black/10 backdrop-blur-sm border border-black/10 rounded-xl px-6 py-3 text-center">
-                        <span class="text-xl md:text-3xl font-bold">Bayar 3 Bulan <span class="bg-black text-yellow-400 px-2 rounded mx-1">FREE 1 Bulan</span></span>
+                        <span class="text-xl md:text-3xl font-bold text-center">Bayar 3 Bulan <span class="bg-black text-yellow-400 px-2 rounded mx-1 text-center">FREE 1 Bulan</span></span>
                     </div>
-                    <p class="mt-4 text-sm font-semibold opacity-75">*Syarat & Ketentuan berlaku</p>
+                    <p class="mt-4 text-sm font-semibold opacity-75 text-center italic">*Syarat & Ketentuan berlaku</p>
                 </div>
             </div>
         </div>
@@ -204,8 +209,8 @@
     <section class="py-24 px-6 bg-white/[0.02]">
         <div class="container mx-auto max-w-4xl reveal">
             <div class="text-center mb-12">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">The Difference</span>
-                <h2 class="font-display text-3xl font-bold text-white mt-2">HyperLink vs Traditional ISP</h2>
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">The Difference</span>
+                <h2 class="font-display text-3xl font-bold text-white mt-2 text-center">HyperLink vs Traditional ISP</h2>
             </div>
             <div class="overflow-hidden rounded-3xl border border-white/10 card-modern">
                 <table class="w-full text-left border-collapse">
@@ -213,24 +218,24 @@
                         <tr class="bg-white/5">
                             <th class="p-6 text-gray-400 font-medium">Fitur Utama</th>
                             <th class="p-6 text-gold-500 font-bold">HyperLink</th>
-                            <th class="p-6 text-gray-500 font-medium">Provider Lain</th>
+                            <th class="p-6 text-gray-500 font-medium text-center">Provider Lain</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-t border-white/5">
                             <td class="p-6 text-white font-medium">Fair Usage Policy (FUP)</td>
-                            <td class="p-6 text-green-400 font-bold">Murni Tanpa Batas</td>
-                            <td class="p-6 text-gray-500">Sering Dibatasi</td>
+                            <td class="p-6 text-green-400 font-bold text-center">Murni Tanpa Batas</td>
+                            <td class="p-6 text-gray-500 text-center">Sering Dibatasi</td>
                         </tr>
                         <tr class="border-t border-white/5">
                             <td class="p-6 text-white font-medium">Upload : Download</td>
-                            <td class="p-6 text-green-400 font-bold">Simetris 1:1</td>
-                            <td class="p-6 text-gray-500">Asimetris (Lambat)</td>
+                            <td class="p-6 text-green-400 font-bold text-center">Simetris 1:1</td>
+                            <td class="p-6 text-gray-500 text-center">Asimetris (Lambat)</td>
                         </tr>
                         <tr class="border-t border-white/5">
                             <td class="p-6 text-white font-medium">Biaya Instalasi</td>
-                            <td class="p-6 text-green-400 font-bold">FREE (Rp 0)</td>
-                            <td class="p-6 text-gray-500">Rp 250.000+</td>
+                            <td class="p-6 text-green-400 font-bold text-center">FREE (Rp 0)</td>
+                            <td class="p-6 text-gray-500 text-center">Rp 250.000+</td>
                         </tr>
                     </tbody>
                 </table>
@@ -241,37 +246,36 @@
     <section id="features" class="py-24 px-6 relative overflow-hidden">
         <div class="container mx-auto max-w-6xl">
             <div class="text-center mb-16 reveal">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Keunggulan Kami</span>
-                <h2 class="font-display text-4xl font-bold text-white mt-2">Standar Internet Masa Depan</h2>
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">Keunggulan Kami</span>
+                <h2 class="font-display text-4xl font-bold text-white mt-2 text-center text-center">Standar Internet Masa Depan</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="reveal card-modern rounded-[2rem] p-8 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent to-gold-500/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="w-12 h-12 bg-gold-500/10 text-gold-400 rounded-xl flex items-center justify-center text-2xl mb-6 border border-gold-500/20 shadow-[0_0_15px_rgba(234,179,8,0.1)]">⚡</div>
-                    <h3 class="font-display text-2xl font-bold mb-3 text-white">Simetris 1:1</h3>
+                    <div class="w-12 h-12 bg-gold-500/10 text-gold-400 rounded-xl flex items-center justify-center text-2xl mb-6 border border-gold-500/20 text-center">⚡</div>
+                    <h3 class="font-display text-2xl font-bold mb-3 text-white text-center md:text-left">Simetris 1:1</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center md:text-left">Kecepatan Upload dan Download sama cepatnya. Kirim file besar secepat menerima file.</p>
                 </div>
 
                 <div class="reveal card-modern rounded-[2rem] p-8 relative overflow-hidden group border-gold-500/20">
-                    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl mb-6 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] text-center">🎮</div>
-                    <h3 class="font-display text-2xl font-bold mb-3 text-white">Low Latency Gaming</h3>
+                    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl mb-6 text-white text-center">🎮</div>
+                    <h3 class="font-display text-2xl font-bold mb-3 text-white text-center md:text-left">Low Latency Gaming</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center md:text-left">Routing khusus ke server game populer (Valorant, MLBB, Dota 2) untuk ping terendah & stabil.</p>
                 </div>
 
                 <div class="reveal card-modern rounded-[2rem] p-8 relative overflow-hidden group">
                     <div class="w-12 h-12 bg-gold-500/10 text-gold-400 rounded-xl flex items-center justify-center text-2xl mb-6 border border-gold-500/20 text-center">♾️</div>
-                    <h3 class="font-display text-2xl font-bold mb-3 text-white">No FUP Guarantee</h3>
+                    <h3 class="font-display text-2xl font-bold mb-3 text-white text-center md:text-left">No FUP Guarantee</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center md:text-left">Bebas kuota sepuasnya tanpa ada batas pemakaian wajar. Kecepatan tetap stabil 24/7.</p>
                 </div>
 
-                <div class="reveal card-modern rounded-[2rem] p-8 relative overflow-hidden group">
+                <div class="reveal card-modern rounded-[2rem] p-8 relative overflow-hidden group text-center md:text-left">
                     <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl mb-6 text-white text-center">🛡️</div>
                     <h3 class="font-display text-2xl font-bold mb-3 text-white">Enterprise SLA</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed text-center md:text-left">Jaminan ketersediaan layanan hingga 99.9%. Infrastruktur kelas bisnis untuk rumah Anda.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Jaminan ketersediaan layanan hingga 99.9%. Infrastruktur kelas bisnis untuk rumah Anda.</p>
                 </div>
 
-                <div class="reveal md:col-span-2 bg-gradient-to-br from-gold-500 to-gold-600 text-black rounded-[2rem] p-8 shadow-[0_0_30px_rgba(234,179,8,0.3)] relative overflow-hidden group flex flex-col md:flex-row items-center justify-between">
+                <div class="reveal md:col-span-2 bg-gradient-to-br from-gold-500 to-gold-600 text-black rounded-[2rem] p-8 shadow-[0_0_30px_rgba(234,179,8,0.3)] relative overflow-hidden group flex flex-col md:flex-row items-center justify-between text-center md:text-left">
                     <div class="relative z-10 max-w-md">
                         <div class="w-12 h-12 bg-black/10 rounded-xl flex items-center justify-center text-2xl mb-4 text-center">📞</div>
                         <h3 class="font-display text-3xl font-bold mb-2">Dedicated Support</h3>
@@ -286,17 +290,17 @@
     <section id="plans" class="py-24 px-6 relative bg-white/5 border-y border-white/5">
         <div class="container mx-auto max-w-6xl relative z-10">
             <div class="text-center mb-16 reveal">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Pilihan Paket</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4">Pilih Kecepatan Anda</h2>
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">Pilihan Paket</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4 text-center">Pilih Kecepatan Anda</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
                 @foreach($packages as $package)
                     <div class="reveal card-modern rounded-[2rem] p-6 group flex flex-col h-full relative hover:border-gold-500/50 transition-all duration-300 {{ $package->is_featured ? 'bg-gold-500/5 border-gold-500/30' : '' }}">
-                        @if($package->is_featured)<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-500 text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">Paling Laris</div>@endif
-                        <h3 class="font-display text-lg font-bold text-white uppercase">{{ $package->name }}</h3>
-                        <p class="text-gold-500 font-bold text-2xl mb-4 italic">{{ $package->speed }}</p>
-                        <div class="mb-4 pb-4 border-b border-white/10 text-2xl font-bold text-white">Rp {{ number_format($package->price / 1000, 0) }}.000<span class="text-xs text-gray-500 font-normal italic">/bln</span></div>
+                        @if($package->is_featured)<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-500 text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest whitespace-nowrap text-center">Paling Laris</div>@endif
+                        <h3 class="font-display text-lg font-bold text-white uppercase text-center">{{ $package->name }}</h3>
+                        <p class="text-gold-500 font-bold text-2xl mb-4 italic text-center">{{ $package->speed }}</p>
+                        <div class="mb-4 pb-4 border-b border-white/10 text-2xl font-bold text-white text-center">Rp {{ number_format($package->price / 1000, 0) }}.000<span class="text-xs text-gray-500 font-normal italic">/bln</span></div>
                         
                         <ul class="space-y-2 text-sm text-gray-400 mb-6 flex-grow">
                             @php
@@ -307,7 +311,7 @@
                                 }
                             @endphp
                             @foreach($features as $feature)
-                                <li class="flex gap-2 items-start"><span class="text-gold-500 font-bold text-center">✓</span> <span class="text-center md:text-left">{{ trim($feature) }}</span></li>
+                                <li class="flex gap-2 items-start justify-center md:justify-start"><span class="text-gold-500 font-bold text-center">✓</span> <span class="text-center md:text-left">{{ trim($feature) }}</span></li>
                             @endforeach
                         </ul>
 
@@ -319,21 +323,21 @@
     </section>
 
     <section id="coverage" class="py-24 px-6 relative bg-black/20">
-        <div class="container mx-auto max-w-5xl text-center reveal">
-            <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Our Coverage</span>
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2 mb-12">Tersedia di Kota-Kota Besar</h2>
+        <div class="container mx-auto max-w-5xl text-center reveal text-center">
+            <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">Our Coverage</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2 mb-12 text-center uppercase">Tersedia di Kota-Kota Besar</h2>
             <div class="flex flex-wrap justify-center gap-3 mb-16">
-                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default">📍 Jakarta</span>
-                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default">📍 Surabaya</span>
-                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default">📍 Bandung</span>
-                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default">📍 Medan</span>
-                <span class="px-4 md:px-6 py-3 rounded-xl bg-gold-500/10 border border-gold-500/30 font-semibold text-gold-400 animate-pulse text-center">🚀 Bali (Coming Soon)</span>
+                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default text-center">📍 Jakarta</span>
+                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default text-center">📍 Surabaya</span>
+                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default text-center">📍 Bandung</span>
+                <span class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 font-semibold text-gray-300 hover:border-gold-500/50 transition cursor-default text-center">📍 Medan</span>
+                <span class="px-4 md:px-6 py-3 rounded-xl bg-gold-500/10 border border-gold-500/30 font-semibold text-gold-400 animate-pulse text-center text-center">🚀 Bali (Coming Soon)</span>
             </div>
             <div class="bg-dark-surface border border-white/10 rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-2xl">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500 rounded-full blur-[100px] opacity-10"></div>
                 <div class="relative z-10 text-center">
                     <h3 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">Siap untuk Upgrade?</h3>
-                    <p class="text-gray-400 max-w-lg mx-auto mb-10 text-lg">Dapatkan promo <strong>Bayar 3 Bulan Free 1 Bulan</strong> sekarang juga. Tanpa kontrak rumit.</p>
+                    <p class="text-gray-400 max-w-lg mx-auto mb-10 text-lg text-center">Dapatkan promo <strong>Bayar 3 Bulan Free 1 Bulan</strong> sekarang juga. Tanpa kontrak rumit.</p>
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
                         <a href="https://wa.me/6285156412702" target="_blank" class="px-10 py-4 bg-gold-500 text-black rounded-2xl font-bold shadow-lg hover:-translate-y-1 transition text-center">Mulai Sekarang</a>
                     </div>
@@ -345,64 +349,93 @@
     <section class="py-24 px-6 relative overflow-hidden">
         <div class="container mx-auto max-w-6xl">
             <div class="text-center mb-16 reveal">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Testimonials</span>
-                <h2 class="font-display text-4xl font-bold text-white mt-2">Apa Kata Pengguna HyperLink?</h2>
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center text-center">Testimonials</span>
+                <h2 class="font-display text-4xl font-bold text-white mt-2 text-center text-center">Apa Kata Pengguna HyperLink?</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="card-modern rounded-[2rem] p-8 reveal text-center md:text-left">
                     <div class="flex gap-1 text-gold-500 mb-4 justify-center md:justify-start"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed">"Pindah ke HyperLink buat WFH bener-bener game changer. Upload file gede nggak pake nunggu lama!"</p>
+                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed text-center md:text-left">"Pindah ke HyperLink buat WFH bener-bener game changer. Upload file gede nggak pake nunggu lama!"</p>
                     <div class="flex items-center gap-4 justify-center md:justify-start">
-                        <div class="w-10 h-10 rounded-full bg-gold-500/20 flex items-center justify-center font-bold text-gold-500">A</div>
-                        <div class="text-center md:text-left"><p class="text-white font-bold text-sm">Aditya Prasetyo</p><p class="text-gray-500 text-xs">Graphic Designer</p></div>
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 flex items-center justify-center font-bold text-gold-500 text-center text-center">A</div>
+                        <div class="text-center md:text-left"><p class="text-white font-bold text-sm text-center md:text-left">Aditya Prasetyo</p><p class="text-gray-500 text-xs text-center md:text-left">Graphic Designer</p></div>
                     </div>
                 </div>
                 <div class="card-modern rounded-[2rem] p-8 reveal text-center md:text-left">
-                    <div class="flex gap-1 text-gold-500 mb-4 justify-center md:justify-start"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed">"Internet paling stabil yang pernah saya pake buat main Valorant. Ping anteng di 10-15ms sebulan penuh."</p>
-                    <div class="flex items-center gap-4 justify-center md:justify-start">
-                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center font-bold text-blue-500">R</div>
-                        <div class="text-center md:text-left"><p class="text-white font-bold text-sm">Reza Fahlevi</p><p class="text-gray-500 text-xs text-center md:text-left">E-sports Player</p></div>
+                    <div class="flex gap-1 text-gold-500 mb-4 justify-center md:justify-start text-center"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed text-center md:text-left">"Internet paling stabil yang pernah saya pake buat main Valorant. Ping anteng di 10-15ms sebulan penuh."</p>
+                    <div class="flex items-center gap-4 justify-center md:justify-start text-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center font-bold text-blue-500 text-center">R</div>
+                        <div class="text-center md:text-left"><p class="text-white font-bold text-sm text-center md:text-left">Reza Fahlevi</p><p class="text-gray-500 text-xs text-center md:text-left">E-sports Player</p></div>
                     </div>
                 </div>
                 <div class="card-modern rounded-[2rem] p-8 reveal text-center md:text-left">
-                    <div class="flex gap-1 text-gold-500 mb-4 justify-center md:justify-start"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed">"Layanan supportnya jempolan. Pernah ada kendala malem-malem, dibantu sampe beres via WhatsApp."</p>
-                    <div class="flex items-center gap-4 justify-center md:justify-start">
-                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center font-bold text-purple-500">S</div>
-                        <div class="text-center md:text-left"><p class="text-white font-bold text-sm text-center md:text-left">Siti Aminah</p><p class="text-gray-500 text-xs text-center md:text-left">Entrepreneur</p></div>
+                    <div class="flex gap-1 text-gold-500 mb-4 justify-center md:justify-start text-center"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <p class="text-gray-300 italic mb-6 text-sm leading-relaxed text-center md:text-left">"Layanan supportnya jempolan. Pernah ada kendala malem-malem, dibantu sampe beres via WhatsApp."</p>
+                    <div class="flex items-center gap-4 justify-center md:justify-start text-center">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center font-bold text-purple-500 text-center">S</div>
+                        <div class="text-center md:text-left"><p class="text-white font-bold text-sm text-center md:text-left text-center md:text-left">Siti Aminah</p><p class="text-gray-500 text-xs text-center md:text-left">Entrepreneur</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="py-24 px-6 border-t border-white/5 overflow-hidden">
+    <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-16 reveal">
+            <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Trusted by Industry Leaders</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Dipercaya Oleh Berbagai Perusahaan</h2>
+        </div>
+        
+        <div class="relative flex overflow-x-hidden group">
+            <div class="py-12 animate-scroll flex gap-20 items-center whitespace-nowrap">
+                @if(isset($partners) && $partners->count() > 0)
+                    @foreach($partners as $partner)
+                        <img src="{{ asset('storage/' . $partner->logo) }}" 
+                             alt="{{ $partner->name }}" 
+                             class="w-16 md:w-20 h-16 object-contain opacity-30 brightness-0 invert hover:opacity-100 transition duration-300">
+                    @endforeach
+                    
+                    @foreach($partners as $partner)
+                        <img src="{{ asset('storage/' . $partner->logo) }}" 
+     alt="{{ $partner->name }}" 
+     class="w-16 md:w-20 h-16 object-contain opacity-60 hover:opacity-100 transition duration-300">
+                    @endforeach
+                @else
+                    <p class="text-gray-500 italic w-full text-center">Data mitra kerja sama belum tersedia.</p>
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+
     <section id="faq" class="py-24 px-6 relative border-t border-white/5 bg-black/40">
         <div class="container mx-auto max-w-3xl reveal px-4">
             <div class="text-center mb-16">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">FAQ</span>
-                <h2 class="font-display text-4xl font-bold text-white mt-2 text-center">Sering Ditanyakan</h2>
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center uppercase uppercase">FAQ</span>
+                <h2 class="font-display text-4xl font-bold text-white mt-2 text-center uppercase uppercase">Sering Ditanyakan</h2>
             </div>
             <div class="space-y-4">
                 <details class="group card-modern rounded-[1.5rem] p-6 cursor-pointer" open>
-                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Apakah benar Unlimited tanpa FUP?<span class="text-gold-500 group-open:rotate-180 transition">▼</span></summary>
+                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Apakah benar Unlimited tanpa FUP?<span class="text-gold-500 group-open:rotate-180 transition text-center text-xs">▼</span></summary>
                     <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left">Tentu saja! HyperLink menyediakan layanan internet murni tanpa batas sepuasnya tanpa penurunan kecepatan.</p>
                 </details>
                 <details class="group card-modern rounded-[1.5rem] p-6 cursor-pointer">
-                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Berapa lama waktu pemasangan?<span class="text-gold-500 group-open:rotate-180 transition">▼</span></summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left">Setelah pendaftaran diverifikasi, teknisi kami akan melakukan instalasi dalam 1-3 hari kerja.</p>
+                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Berapa lama waktu pemasangan?<span class="text-gold-500 group-open:rotate-180 transition text-center text-xs">▼</span></summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left text-center md:text-left">Setelah pendaftaran diverifikasi, teknisi kami akan melakukan instalasi dalam 1-3 hari kerja.</p>
                 </details>
                 <details class="group card-modern rounded-[1.5rem] p-6 cursor-pointer">
-                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Apakah ada biaya tersembunyi?<span class="text-gold-500 group-open:rotate-180 transition">▼</span></summary>
+                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Apakah ada biaya tersembunyi?<span class="text-gold-500 group-open:rotate-180 transition text-center text-xs">▼</span></summary>
                     <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left">Harga yang tertera sudah transparan. Kami tidak mengenakan biaya sewa modem bulanan atau biaya admin tersembunyi lainnya.</p>
                 </details>
                 <details class="group card-modern rounded-[1.5rem] p-6 cursor-pointer">
-                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Bagaimana jika terjadi gangguan?<span class="text-gold-500 group-open:rotate-180 transition">▼</span></summary>
+                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">Bagaimana jika terjadi gangguan?<span class="text-gold-500 group-open:rotate-180 transition text-center text-xs">▼</span></summary>
                     <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left">Layanan support kami siaga 24/7. Anda bisa langsung menghubungi tim teknis via WhatsApp untuk penanganan cepat.</p>
                 </details>
                 <details class="group card-modern rounded-[1.5rem] p-6 cursor-pointer">
-                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none uppercase tracking-widest">Bisa ubah paket kapan saja?<span class="text-gold-500 group-open:rotate-180 transition italic">▼</span></summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left italic">Bisa. Anda cukup menghubungi layanan pelanggan kami untuk menyesuaikan kecepatan internet sesuai kebutuhan terbaru tanpa denda penalti.</p>
+                    <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none uppercase tracking-widest uppercase tracking-widest">Bisa ubah paket kapan saja?<span class="text-gold-500 group-open:rotate-180 transition italic text-center text-xs italic">▼</span></summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left italic italic">Bisa. Anda cukup menghubungi layanan pelanggan kami untuk menyesuaikan kecepatan internet sesuai kebutuhan terbaru tanpa denda penalti.</p>
                 </details>
             </div>
         </div>
@@ -411,20 +444,20 @@
     <footer class="bg-black text-gray-400 py-16 border-t border-white/10">
         <div class="container mx-auto px-6 text-center">
             <div class="flex flex-col items-center gap-6">
-                <a href="#" class="flex items-center gap-2"><img src="{{ asset('images/favicon.png') }}" class="w-8 h-8 opacity-50 grayscale"><span class="font-display font-bold text-lg text-white opacity-50 tracking-widest uppercase text-center">HyperLink</span></a>
+                <a href="#" class="flex items-center gap-2 text-center"><img src="{{ asset('images/favicon.png') }}" class="w-8 h-8 opacity-50 grayscale text-center"><span class="font-display font-bold text-lg text-white opacity-50 tracking-widest uppercase text-center text-center">HyperLink</span></a>
                 <div class="flex flex-col items-center gap-2">
-                    <p class="text-sm text-gray-600 tracking-wide">&copy; 2026 <span class="text-white font-bold uppercase">HyperLink</span>. Developed & Powered by</p>
-                    <p class="text-gold-500 font-display font-semibold italic tracking-[0.2em] text-xs uppercase text-center">Sekawan Putra Pratama</p>
+                    <p class="text-sm text-gray-600 tracking-wide text-center text-center">&copy; 2026 <span class="text-white font-bold uppercase text-center text-center">HyperLink</span>. Developed & Powered by</p>
+                    <p class="text-gold-500 font-display font-semibold italic tracking-[0.2em] text-xs uppercase text-center text-center">Sekawan Putra Pratama</p>
                 </div>
-                <div class="h-[1px] w-20 bg-gradient-to-r from-transparent via-gold-500/20 to-transparent"></div>
-                <p class="text-[10px] text-gray-700 uppercase tracking-[0.5em] text-center">Jakarta • Surabaya • Bandung • Medan</p>
+                <div class="h-[1px] w-20 bg-gradient-to-r from-transparent via-gold-500/20 to-transparent text-center"></div>
+                <p class="text-[10px] text-gray-700 uppercase tracking-[0.5em] text-center text-center text-center">Jakarta • Surabaya • Bandung • Medan</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/6285156412702" target="_blank" class="fixed bottom-6 right-6 z-[60] bg-[#25D366] p-4 rounded-full shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-all group">
+    <a href="https://wa.me/6285156412702" target="_blank" class="fixed bottom-6 right-6 z-[60] bg-[#25D366] p-4 rounded-full shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-all group border border-white/10">
         <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        <span class="absolute right-20 top-1/2 -translate-y-1/2 bg-white text-black text-[10px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap border-l-4 border-gold-500 pointer-events-none tracking-widest uppercase">Butuh Bantuan?</span>
+        <span class="absolute right-20 top-1/2 -translate-y-1/2 bg-white text-black text-[10px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap border-l-4 border-gold-500 pointer-events-none tracking-widest uppercase shadow-2xl shadow-2xl">Butuh Bantuan?</span>
     </a>
 
     <script>
