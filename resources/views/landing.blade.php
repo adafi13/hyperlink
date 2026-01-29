@@ -14,7 +14,9 @@
     <meta property="og:type" content="website">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -22,7 +24,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Space Grotesk"', 'sans-serif'],
+                        display: ['"Montserrat"', 'sans-serif'],
                     },
                     colors: {
                         gold: {
@@ -129,7 +131,7 @@
                 Internet Pilihan Anak Muda
             </div>
 
-            <h1 class="font-display text-5xl md:text-8xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+            <h1 class="font-display text-5xl md:text-8xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
                 HARGA YANG PAS <br>
                 <span class="text-gold-gradient drop-shadow-[0_0_20px_rgba(234,179,8,0.3)]">UNTUK KECEPATAN</span> <br>
                 TANPA BATAS.
