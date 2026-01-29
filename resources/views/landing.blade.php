@@ -42,7 +42,6 @@
                     animation: {
                         'blob': 'blob 10s infinite',
                         'shimmer': 'shimmer 2s linear infinite',
-                        'scroll': 'scroll 20s linear infinite',
                     },
                     keyframes: {
                         blob: {
@@ -55,10 +54,6 @@
                             from: { backgroundPosition: '0 0' },
                             to: { backgroundPosition: '-200% 0' },
                         },
-                        scroll: {
-                            from: { transform: 'translateX(0)' },
-                            to: { transform: 'translateX(-100%)' },
-                        }
                     }
                 }
             }
@@ -187,9 +182,9 @@
         <div class="container mx-auto px-6 text-center mb-6">
             <p class="text-xs font-bold text-gray-600 uppercase tracking-[0.3em]">Trusted by Sekawan Putra Pratama</p>
         </div>
-        <div class="flex w-[200%] animate-scroll text-gray-500 font-display font-bold text-2xl gap-20 opacity-40">
+        <div class="flex flex-wrap justify-center w-full text-gray-500 font-display font-bold text-2xl gap-20 opacity-40">
             <span>NETFLIX</span> <span>GOOGLE</span> <span>VALORANT</span> <span>SPOTIFY</span> <span>TWITCH</span> 
-            <span>DISCORD</span> <span>APPLE</span> <span>NETFLIX</span> <span>GOOGLE</span> <span>VALORANT</span>
+            <span>DISCORD</span> <span>APPLE</span>
         </div>
     </div>
 
