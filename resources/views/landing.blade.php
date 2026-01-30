@@ -342,7 +342,7 @@
                         @foreach($partners as $partner)
                             <img src="{{ asset('storage/' . $partner->logo) }}"
         alt="{{ $partner->name }}"
-        class="w-48 md:w-48 h-16 object-contain opacity-70 hover:opacity-100 transition duration-300">
+        class="w-[30em] md:w-[38em] h-[7em] object-contain opacity-70 hover:opacity-100 transition duration-300">
                         @endforeach
                     @else
                         <p class="text-gray-500 italic w-full text-center">Data mitra kerja sama belum tersedia.</p>
