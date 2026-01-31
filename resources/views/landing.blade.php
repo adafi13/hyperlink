@@ -18,52 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<<<<<<< HEAD
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Montserrat"', 'sans-serif'],
-                    },
-                    colors: {
-                        gold: {
-                            400: '#FACC15',
-                            500: '#EAB308',
-                            600: '#CA8A04',
-                            glow: 'rgba(234, 179, 8, 0.5)'
-                        },
-                        dark: {
-                            bg: '#050505',     
-                            surface: '#0A0A0A', 
-                            border: '#1F1F1F',  
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 10s infinite',
-                        'shimmer': 'shimmer 2s linear infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        shimmer: {
-                            from: { backgroundPosition: '0 0' },
-                            to: { backgroundPosition: '-200% 0' },
-                        },
-                    }
-                }
-            }
-        }
-    </script>
-=======
     <script src="{{ asset('js/tailwind/tailwind.js') }}?v={{ filemtime(public_path('js/tailwind/tailwind.js')) }}"></script>
->>>>>>> c670508da0ff02ddfe4dc9256d2671a1f7ec4a8d
     <style>
         .bg-grid {
             background-size: 50px 50px;
@@ -187,11 +142,6 @@
                 <div><div class="text-4xl md:text-5xl font-display font-extrabold text-white mb-2 counter" data-target="24">0</div><p class="text-xs font-bold text-gray-500 uppercase tracking-widest text-center">Jam Support</p></div>
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="flex flex-wrap justify-center w-full text-gray-500 font-display font-bold text-2xl gap-20 opacity-40">
-            <span>NETFLIX</span> <span>GOOGLE</span> <span>VALORANT</span> <span>SPOTIFY</span> <span>TWITCH</span> 
-            <span>DISCORD</span> <span>APPLE</span>
-=======
     </section>
 
     <div class="py-12 bg-black/30">
@@ -207,7 +157,6 @@
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord" class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition duration-300 cursor-pointer">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition duration-300 cursor-pointer">
             </div>
->>>>>>> c670508da0ff02ddfe4dc9256d2671a1f7ec4a8d
         </div>
     </div>
 
