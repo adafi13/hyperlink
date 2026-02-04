@@ -188,6 +188,18 @@
         #scrollTopBtn { transition: all 0.5s ease; }
         #scrollTopBtn.hidden-btn { opacity: 0; pointer-events: none; transform: translateY(20px); }
         #scrollTopBtn.show-btn { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+        /* --- CSS UNTUK TECH STACK RUNNING --- */
+        .animate-marquee { animation: marquee 25s linear infinite; }
+        .animate-marquee2 { animation: marquee2 25s linear infinite; }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes marquee2 {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(0%); }
+        }
     </style>
 </head>
 <body class="bg-dark-bg text-white selection:bg-gold-500 selection:text-black overflow-x-hidden font-sans">
@@ -280,6 +292,139 @@
                 <div><div class="text-4xl md:text-5xl font-display font-extrabold text-white mb-2 counter" data-target="45">0</div><p class="text-xs font-bold text-gray-500 uppercase tracking-widest text-center">Cakupan Area</p></div>
                 <div><div class="text-4xl md:text-5xl font-display font-extrabold text-white mb-2 counter" data-target="99">0</div><p class="text-xs font-bold text-gray-500 uppercase tracking-widest text-center">% Uptime</p></div>
                 <div><div class="text-4xl md:text-5xl font-display font-extrabold text-white mb-2 counter" data-target="24">0</div><p class="text-xs font-bold text-gray-500 uppercase tracking-widest text-center">Jam Support</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-black/40 border-b border-white/5 relative overflow-hidden">
+        <div class="container mx-auto px-6 mb-8 text-center reveal">
+            <p class="text-xs font-bold text-gold-500 uppercase tracking-[0.3em]">Infrastructure & Devices</p>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-white mt-2">Didukung Teknologi Terbaik</h3>
+        </div>
+        
+        <div class="relative flex overflow-x-hidden group">
+            <div class="py-4 animate-marquee flex gap-12 md:gap-16 items-center whitespace-nowrap min-w-full pl-6">
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/fortinet/white" alt="Fortinet" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Fortinet</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/mikrotik/white" alt="MikroTik" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">MikroTik</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/cisco/white" alt="Cisco" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Cisco</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/junipernetworks/white" alt="Juniper" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Juniper</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/zte.png') }}" alt="ZTE" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">ZTE</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/ruijie.png') }}" alt="Ruijie" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Ruijie</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/tplink/white" alt="TP-Link" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">TP-Link</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/hikvision.png') }}" alt="Hikvision" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Hikvision</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/ubiquiti/white" alt="Ubiquiti" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Ubiquiti</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/aruba.png') }}" alt="Aruba" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Aruba</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/huawei/white" alt="Huawei" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Huawei</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/vsol.png') }}" alt="VSOL OLT" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">VSOL OLT</span>
+                </div>
+            </div>
+
+            <div class="absolute top-0 py-4 animate-marquee2 flex gap-12 md:gap-16 items-center whitespace-nowrap min-w-full pl-6">
+                 <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/fortinet/white" alt="Fortinet" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Fortinet</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/mikrotik/white" alt="MikroTik" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">MikroTik</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/cisco/white" alt="Cisco" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Cisco</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/junipernetworks/white" alt="Juniper" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Juniper</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/zte.png') }}" alt="ZTE" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">ZTE</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/ruijie.png') }}" alt="Ruijie" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Ruijie</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/tplink/white" alt="TP-Link" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">TP-Link</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/hikvision.png') }}" alt="Hikvision" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Hikvision</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/ubiquiti/white" alt="Ubiquiti" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Ubiquiti</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/aruba.png') }}" alt="Aruba" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Aruba</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="https://cdn.simpleicons.org/huawei/white" alt="Huawei" class="h-8 md:h-10 w-auto">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Huawei</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0">
+                    <img src="{{ asset('images/brands/vsol.png') }}" alt="VSOL OLT" class="h-8 md:h-10 w-auto object-contain invert brightness-0">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">VSOL OLT</span>
+                </div>
             </div>
         </div>
     </section>
@@ -554,7 +699,7 @@
 
                 <div class="flex flex-col items-center gap-1">
                     <p class="text-sm text-gray-500 tracking-wide">
-                        &copy; {{ date('Y') }} <span class="text-white font-bold">{{ $settings['site_name'] }}</span>. All Rights Reserved.
+                        © {{ date('Y') }} <span class="text-white font-bold">{{ $settings['site_name'] }}</span>. All Rights Reserved.
                     </p>
                     <p class="text-xs text-gray-600 tracking-widest uppercase mt-1">
                         Published by <a href="https://www.sekawanputrapratama.com" target="_blank" class="text-gold-500 hover:text-white transition-colors font-semibold">www.sekawanputrapratama.com</a>
