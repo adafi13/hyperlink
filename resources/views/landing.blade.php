@@ -65,8 +65,18 @@
         'telephone' => $settings['whatsapp_number'],
         'address' => [
             '@type' => 'PostalAddress',
+            'streetAddress' => 'Jl. Raya Bogor',
+            'addressLocality' => 'Depok',
+            'addressRegion' => 'Jawa Barat',
+            'postalCode' => '16516',
             'addressCountry' => 'ID'
         ],
+        'geo' => [
+            '@type' => 'GeoCoordinates',
+            'latitude' => -6.435738,
+            'longitude' => 106.81451
+        ],
+        'hasMap' => 'https://www.google.com/maps?q=-6.435738,106.81451',
         'url' => url('/'),
         'areaServed' => [
             ['@type' => 'City', 'name' => 'Depok'],
@@ -367,7 +377,7 @@
         <div class="container mx-auto max-w-6xl relative z-10">
             <div class="text-center mb-16 reveal">
                 <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">Paket Internet Murah</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4 text-center">Pilih Paket Internet Rakyat Anda</h2>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4 text-center">Pilih Paket Internet Anda</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
@@ -488,6 +498,39 @@
                 @empty
                 <p class="text-gray-500 italic text-center">Belum ada FAQ yang tersedia.</p>
                 @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Lokasi / Google Maps -->
+    <section id="location" class="py-24 px-6 relative border-t border-white/5 bg-black/20">
+        <div class="container mx-auto max-w-5xl reveal">
+            <div class="text-center mb-12">
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm">Lokasi Kami</span>
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Temukan Kantor HyperLink</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto">Kunjungi kantor kami atau hubungi tim support untuk informasi lebih lanjut mengenai layanan internet murah kami.</p>
+            </div>
+            <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.4!2d106.81451!3d-6.435738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjYnMDguNyJTIDEwNsKwNDgnNTIuMiJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full grayscale hover:grayscale-0 transition duration-500">
+                </iframe>
+            </div>
+            <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-6 text-center">
+                <div class="flex items-center gap-3 text-gray-400">
+                    <span class="text-2xl">📍</span>
+                    <span>Depok, Jawa Barat, Indonesia</span>
+                </div>
+                <a href="https://www.google.com/maps?q=-6.435738,106.81451" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-gold-500/10 border border-gold-500/30 rounded-xl text-gold-400 font-semibold hover:bg-gold-500 hover:text-black transition duration-300">
+                    <span>Buka di Google Maps</span>
+                    <span>→</span>
+                </a>
             </div>
         </div>
     </section>
