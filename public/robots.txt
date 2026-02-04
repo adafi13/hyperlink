@@ -1,2 +1,15 @@
+# Robots.txt for HyperLink Internet
+# https://get-hyperlink.com
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin
+Disallow: /storage/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Sitemap Location
+Sitemap: https://get-hyperlink.com/sitemap.xml
+
+# Crawl-delay for bots (optional)
+Crawl-delay: 1

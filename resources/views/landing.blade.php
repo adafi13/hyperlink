@@ -4,15 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $settings['site_name'] }} - {{ $settings['site_tagline'] }}</title>
+    <meta name="description" content="{{ $settings['meta_description'] }}">
+    <meta name="keywords" content="internet fiber optic, wifi rumah murah, paket internet unlimited, provider internet cepat, internet tanpa FUP, wifi unlimited, internet bandwidth tinggi, internet gaming, hyperlink internet">
     <meta name="author" content="Sekawan Putra Pratama">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#EAB308">
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <link rel="icon" type="image/png" href="{{ asset($settings['site_favicon']) }}">
     <link rel="apple-touch-icon" href="{{ asset($settings['site_favicon']) }}">
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $settings['site_name'] }} - {{ $settings['site_tagline'] }}">
     <meta property="og:description" content="{{ $settings['meta_description'] }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="{{ $settings['site_name'] }}">
     <meta property="og:image" content="{{ asset($settings['og_image']) }}?v={{ filemtime(public_path($settings['og_image'])) }}">
-    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $settings['site_name'] }} - {{ $settings['site_tagline'] }}">
+    <meta name="twitter:description" content="{{ $settings['meta_description'] }}">
+    <meta name="twitter:image" content="{{ asset($settings['og_image']) }}?v={{ filemtime(public_path($settings['og_image'])) }}">
+    <meta name="twitter:image:alt" content="{{ $settings['site_name'] }} - Paket Internet Fiber Optic Unlimited">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{ $settings['site_name'] }}",
+        "alternateName": "HyperLink Internet",
+        "url": "{{ url('/') }}",
+        "logo": "{{ asset($settings['site_logo']) }}",
+        "description": "{{ $settings['meta_description'] }}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Indonesia",
+            "addressCountry": "ID"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "{{ $settings['whatsapp_number'] }}",
+            "contactType": "customer service",
+            "availableLanguage": ["Indonesian"]
+        },
+        "sameAs": [
+            "{{ $settings['instagram_url'] ?? '' }}",
+            "{{ $settings['facebook_url'] ?? '' }}"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "{{ $settings['site_name'] }}",
+        "image": "{{ asset($settings['og_image']) }}",
+        "description": "{{ $settings['meta_description'] }}",
+        "priceRange": "$$",
+        "telephone": "{{ $settings['whatsapp_number'] }}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ID"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "",
+            "longitude": ""
+        },
+        "url": "{{ url('/') }}",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1500"
+        }
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -6,6 +6,8 @@ use App\Models\Partner;
 use App\Models\SiteSetting;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 Route::get('/', function () {
     return view('landing', [
@@ -23,4 +25,14 @@ Route::get('/', function () {
             'og_image' => SiteSetting::get('og_image', 'images/brosur-promo.png'),
         ],
     ]);
+});
+
+Route::get('/sitemap.xml', function () {
+    $sitemap = Sitemap::create()
+        ->add(Url::create('/')
+            ->setLastModificationDate(now())
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            ->setPriority(1.0));
+    
+    return $sitemap->toResponse(request());
 });
