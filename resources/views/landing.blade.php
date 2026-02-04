@@ -14,7 +14,6 @@
     <link rel="icon" type="image/png" href="{{ asset($settings['site_favicon']) }}">
     <link rel="apple-touch-icon" href="{{ asset($settings['site_favicon']) }}">
 
-    <!-- Open Graph Meta Tags -->
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $settings['site_name'] }} - {{ $settings['site_tagline'] }}">
@@ -26,7 +25,6 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
 
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $settings['site_name'] }} - {{ $settings['site_tagline'] }}">
     <meta name="twitter:description" content="{{ $settings['meta_description'] }}">
@@ -95,7 +93,6 @@
         ]
     ];
 
-    // FAQ Schema untuk SEO
     $faqItems = [];
     if(isset($faqs) && count($faqs) > 0) {
         foreach($faqs as $faq) {
@@ -115,7 +112,6 @@
         'mainEntity' => $faqItems
     ];
 
-    // Service Schema untuk Internet Murah
     $serviceSchema = [
         '@context' => 'https://schema.org',
         '@type' => 'Service',
@@ -180,6 +176,18 @@
         a:hover, button:hover {
             text-shadow: 0 0 10px rgba(234, 179, 8, 0.4);
         }
+
+        /* --- CSS UNTUK MODAL --- */
+        #registrationModal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        #registrationModal.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        #registrationModal:not(.hidden) { opacity: 1; visibility: visible; pointer-events: auto; }
+        .modal-content { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); transform: scale(0.95); }
+        #registrationModal:not(.hidden) .modal-content { transform: scale(1); }
+
+        /* --- CSS UNTUK SCROLL TOP BUTTON --- */
+        #scrollTopBtn { transition: all 0.5s ease; }
+        #scrollTopBtn.hidden-btn { opacity: 0; pointer-events: none; transform: translateY(20px); }
+        #scrollTopBtn.show-btn { opacity: 1; pointer-events: auto; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-dark-bg text-white selection:bg-gold-500 selection:text-black overflow-x-hidden font-sans">
@@ -403,7 +411,9 @@
                             @endforeach
                         </ul>
 
-                        <a href="https://wa.me/6285283089638?text=Halo%20Admin%20HyperLink,%20saya%20tertarik%20dengan%20paket%20{{ urlencode($package->name) }}" target="_blank" class="block w-full text-center py-3 rounded-xl font-bold transition-all {{ $package->is_featured ? 'bg-gold-500 text-black' : 'border border-white/20 text-white hover:bg-white hover:text-black' }}">Pilih Paket</a>
+                        <button onclick="openModal('{{ $package->name }}')" class="block w-full text-center py-3 rounded-xl font-bold transition-all cursor-pointer {{ $package->is_featured ? 'bg-gold-500 text-black' : 'border border-white/20 text-white hover:bg-white hover:text-black' }}">
+                            Pilih Paket
+                        </button>
                     </div>
                 @endforeach
             </div>
@@ -502,7 +512,6 @@
         </div>
     </section>
 
-    <!-- Section Lokasi / Google Maps -->
     <section id="location" class="py-24 px-6 relative border-t border-white/5 bg-black/20">
         <div class="container mx-auto max-w-5xl reveal">
             <div class="text-center mb-12">
@@ -535,15 +544,24 @@
         </div>
     </section>
 
-    <footer class="bg-black text-gray-400 py-16 border-t border-white/10">
+   <footer class="bg-black text-gray-400 py-16 border-t border-white/10">
         <div class="container mx-auto px-6 text-center">
             <div class="flex flex-col items-center gap-6">
-                <a href="#" class="flex items-center gap-2 text-center"><img src="{{ asset($settings['site_logo']) }}" class="w-8 h-8 opacity-50 grayscale text-center"><span class="font-display font-bold text-lg text-white opacity-50 tracking-widest uppercase text-center text-center">{{ $settings['site_name'] }}</span></a>
-                <div class="flex flex-col items-center gap-2">
-                    <p class="text-sm text-gray-600 tracking-wide text-center text-center">&copy; {{ date('Y') }} <span class="text-white font-bold uppercase text-center text-center">{{ $settings['site_name'] }}</span>. Developed & Powered by</p>
-                    <a href="https://www.sekawanputrapratama.com" target="_blank" class="text-gold-500 font-display font-semibold italic tracking-[0.2em] text-xs uppercase text-center text-center">Sekawan Putra Pratama</a>
+                <a href="#" class="flex items-center gap-2 text-center group">
+                    <img src="{{ asset($settings['site_logo']) }}" class="w-8 h-8 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-500">
+                    <span class="font-display font-bold text-lg text-white opacity-50 tracking-widest uppercase group-hover:opacity-100 transition duration-500">{{ $settings['site_name'] }}</span>
+                </a>
+
+                <div class="flex flex-col items-center gap-1">
+                    <p class="text-sm text-gray-500 tracking-wide">
+                        &copy; {{ date('Y') }} <span class="text-white font-bold">{{ $settings['site_name'] }}</span>. All Rights Reserved.
+                    </p>
+                    <p class="text-xs text-gray-600 tracking-widest uppercase mt-1">
+                        Published by <a href="https://www.sekawanputrapratama.com" target="_blank" class="text-gold-500 hover:text-white transition-colors font-semibold">www.sekawanputrapratama.com</a>
+                    </p>
                 </div>
-                <div class="h-[1px] w-20 bg-gradient-to-r from-transparent via-gold-500/20 to-transparent text-center"></div>
+
+                <div class="h-[1px] w-20 bg-gradient-to-r from-transparent via-gold-500/20 to-transparent mt-2"></div>
             </div>
         </div>
     </footer>
@@ -553,7 +571,84 @@
         <span class="absolute right-20 top-1/2 -translate-y-1/2 bg-white text-black text-[10px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap border-l-4 border-gold-500 pointer-events-none tracking-widest uppercase shadow-2xl shadow-2xl">Butuh Bantuan?</span>
     </a>
 
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="fixed bottom-24 right-6 z-[50] p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hidden-btn hover:bg-gold-500 hover:text-black hover:scale-110 group" aria-label="Scroll to top">
+        <svg class="w-6 h-6 text-white group-hover:text-black transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <div id="registrationModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="modal-content bg-dark-surface border border-white/10 w-full max-w-md rounded-3xl p-8 relative shadow-2xl shadow-gold-500/10" style="background-color: #1a1a1a;">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4 text-gold-500 border border-gold-500/20">📝</div>
+                <h3 class="font-display text-2xl font-bold text-white">Isi Data Diri</h3>
+                <p class="text-gray-400 text-sm mt-2">Lengkapi data untuk lanjut ke WhatsApp.</p>
+            </div>
+
+            <form action="{{ route('leads.store') }}" method="POST" class="space-y-4">
+                @csrf
+                <input type="hidden" id="selectedPackage" name="package_name">
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-1">Nama Lengkap</label>
+                    <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition" placeholder="Contoh: Budi Santoso">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-1">Nomor WhatsApp</label>
+                    <input type="tel" name="phone_number" pattern="[0-9]*" inputmode="numeric" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition" placeholder="Contoh: 08123456789">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-1">Alamat Pemasangan</label>
+                    <textarea name="address" required rows="3" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition" placeholder="Nama Jalan, RT/RW, Kelurahan..."></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-gold-500 hover:bg-gold-400 text-black font-bold py-3.5 rounded-xl transition shadow-[0_0_20px_rgba(234,179,8,0.3)] flex items-center justify-center gap-2">
+                        <span>Lanjut ke WhatsApp</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
+        // --- FUNGSI SCROLL TOP ---
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.remove('hidden-btn');
+                scrollTopBtn.classList.add('show-btn');
+            } else {
+                scrollTopBtn.classList.remove('show-btn');
+                scrollTopBtn.classList.add('hidden-btn');
+            }
+        });
+
+        // --- FUNGSI MODAL ---
+        function openModal(packageName) {
+            document.getElementById('selectedPackage').value = packageName;
+            document.getElementById('registrationModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('registrationModal').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('registrationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // --- SCRIPT LAMA (ANIMASI) ---
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
