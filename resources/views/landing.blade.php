@@ -33,74 +33,57 @@
     <meta name="twitter:image" content="{{ asset($settings['og_image']) }}?v={{ filemtime(public_path($settings['og_image'])) }}">
     <meta name="twitter:image:alt" content="{{ $settings['site_name'] }} - Paket Internet Fiber Optic Unlimited">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "{{ $settings['site_name'] }}",
-        "alternateName": "HyperLink Internet",
-        "url": "{{ url('/') }}",
-        "logo": "{{ asset($settings['site_logo']) }}",
-        "description": "{{ $settings['meta_description'] }}",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Indonesia",
-            "addressCountry": "ID"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "{{ $settings['whatsapp_number'] }}",
-            "contactType": "customer service",
-            "availableLanguage": ["Indonesian"]
-        },
-        "sameAs": [
-            "{{ $settings['instagram_url'] ?? '' }}",
-            "{{ $settings['facebook_url'] ?? '' }}"
+    @php
+    $organizationSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => $settings['site_name'],
+        'alternateName' => 'HyperLink Internet',
+        'url' => url('/'),
+        'logo' => asset($settings['site_logo']),
+        'description' => $settings['meta_description'],
+        'address' => [
+            '@type' => 'PostalAddress',
+            'addressLocality' => 'Indonesia',
+            'addressCountry' => 'ID'
+        ],
+        'contactPoint' => [
+            '@type' => 'ContactPoint',
+            'telephone' => $settings['whatsapp_number'],
+            'contactType' => 'customer service',
+            'availableLanguage' => ['Indonesian']
         ]
-    }
-    </script>
+    ];
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "{{ $settings['site_name'] }}",
-        "image": "{{ asset($settings['og_image']) }}",
-        "description": "{{ $settings['meta_description'] }}",
-        "priceRange": "$$",
-        "telephone": "{{ $settings['whatsapp_number'] }}",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "ID"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "",
-            "longitude": ""
-        },
-        "url": "{{ url('/') }}",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": "00:00",
-            "closes": "23:59"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1500"
-        }
-    }
-    </script>
+    $businessSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'LocalBusiness',
+        'name' => $settings['site_name'],
+        'image' => asset($settings['og_image']),
+        'description' => $settings['meta_description'],
+        'priceRange' => '$$',
+        'telephone' => $settings['whatsapp_number'],
+        'address' => [
+            '@type' => 'PostalAddress',
+            'addressCountry' => 'ID'
+        ],
+        'url' => url('/'),
+        'openingHoursSpecification' => [
+            '@type' => 'OpeningHoursSpecification',
+            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            'opens' => '00:00',
+            'closes' => '23:59'
+        ],
+        'aggregateRating' => [
+            '@type' => 'AggregateRating',
+            'ratingValue' => '4.8',
+            'reviewCount' => '1500'
+        ]
+    ];
+    @endphp
+
+    <script type="application/ld+json">{!! json_encode($organizationSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+    <script type="application/ld+json">{!! json_encode($businessSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -254,7 +237,7 @@
                 <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">The Difference</span>
                 <h2 class="font-display text-3xl font-bold text-white mt-2 text-center">HyperLink vs Traditional ISP</h2>
             </div>
-            <div class="overflow-hidden rounded-3xl border border-white/10 card-modern">
+            <div class="overflow-x-auto rounded-3xl border border-white/10 card-modern">
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="bg-white/5">
@@ -339,7 +322,9 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
                 @foreach($packages as $package)
                     <div class="reveal card-modern rounded-[2rem] p-6 group flex flex-col h-full relative hover:border-gold-500/50 transition-all duration-300 {{ $package->is_featured ? 'bg-gold-500/5 border-gold-500/30' : '' }}">
-                        @if($package->is_featured)<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-500 text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest whitespace-nowrap text-center">Paling Laris</div>@endif
+                        @if($package->is_featured)
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-500 text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest whitespace-nowrap text-center">Paling Laris</div>
+                        @endif
                         <h3 class="font-display text-lg font-bold text-white uppercase text-center">{{ $package->name }}</h3>
                         <p class="text-gold-500 font-bold text-2xl mb-4 italic text-center">{{ $package->speed }}</p>
                         <div class="mb-4 pb-4 border-b border-white/10 text-2xl font-bold text-white text-center">Rp {{ number_format($package->price / 1000, 0) }}.000<span class="text-xs text-gray-500 font-normal italic">/bln</span></div>
@@ -445,7 +430,7 @@
             </div>
             <div class="space-y-4">
                 @forelse($faqs as $index => $faq)
-                <details class="group card-modern rounded-[1.5rem] p-6 cursor-pointer" @if($index === 0) open @endif>
+                <details class="group card-modern rounded-[1.5rem] p-6 cursor-pointer" {{ $index === 0 ? 'open' : '' }}>
                     <summary class="flex justify-between items-center font-display font-bold text-lg text-white list-none">{{ $faq->question }}<span class="text-gold-500 group-open:rotate-180 transition text-center text-xs">▼</span></summary>
                     <p class="text-gray-400 mt-4 leading-relaxed text-sm border-t border-white/5 pt-4 text-center md:text-left">{{ $faq->answer }}</p>
                 </details>
