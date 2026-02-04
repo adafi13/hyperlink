@@ -519,7 +519,7 @@
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                    class="w-full grayscale hover:grayscale-0 transition duration-500">
+                    class="w-full">
                 </iframe>
             </div>
             <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-6 text-center">
