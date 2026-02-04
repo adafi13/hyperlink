@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $settings['site_name'] }} - {{ $settings['site_tagline'] }}</title>
     <meta name="description" content="{{ $settings['meta_description'] }}">
-    <meta name="keywords" content="internet fiber optic, wifi rumah murah, paket internet unlimited, provider internet cepat, internet tanpa FUP, wifi unlimited, internet bandwidth tinggi, internet gaming, hyperlink internet">
+    <meta name="keywords" content="internet murah, internet rakyat, internet rumahan murah, wifi murah unlimited, internet fiber optic murah, paket internet murah, provider internet murah, wifi rumah murah, paket internet unlimited, internet tanpa FUP, wifi unlimited, internet bandwidth tinggi, internet gaming, hyperlink internet">
     <meta name="author" content="Sekawan Putra Pratama">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="theme-color" content="#EAB308">
@@ -38,7 +38,7 @@
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
         'name' => $settings['site_name'],
-        'alternateName' => 'HyperLink Internet',
+        'alternateName' => 'HyperLink Internet - Internet Murah Rakyat',
         'url' => url('/'),
         'logo' => asset($settings['site_logo']),
         'description' => $settings['meta_description'],
@@ -57,17 +57,21 @@
 
     $businessSchema = [
         '@context' => 'https://schema.org',
-        '@type' => 'LocalBusiness',
+        '@type' => 'InternetServiceProvider',
         'name' => $settings['site_name'],
         'image' => asset($settings['og_image']),
-        'description' => $settings['meta_description'],
-        'priceRange' => '$$',
+        'description' => 'Provider internet murah dan internet rakyat dengan koneksi fiber optic unlimited tanpa FUP. ' . $settings['meta_description'],
+        'priceRange' => '$',
         'telephone' => $settings['whatsapp_number'],
         'address' => [
             '@type' => 'PostalAddress',
             'addressCountry' => 'ID'
         ],
         'url' => url('/'),
+        'areaServed' => [
+            ['@type' => 'City', 'name' => 'Depok'],
+            ['@type' => 'City', 'name' => 'Bogor']
+        ],
         'openingHoursSpecification' => [
             '@type' => 'OpeningHoursSpecification',
             'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -80,10 +84,57 @@
             'reviewCount' => '1500'
         ]
     ];
+
+    // FAQ Schema untuk SEO
+    $faqItems = [];
+    if(isset($faqs) && count($faqs) > 0) {
+        foreach($faqs as $faq) {
+            $faqItems[] = [
+                '@type' => 'Question',
+                'name' => $faq->question,
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $faq->answer
+                ]
+            ];
+        }
+    }
+    $faqSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'FAQPage',
+        'mainEntity' => $faqItems
+    ];
+
+    // Service Schema untuk Internet Murah
+    $serviceSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'serviceType' => 'Internet Murah Fiber Optic',
+        'provider' => [
+            '@type' => 'Organization',
+            'name' => $settings['site_name']
+        ],
+        'areaServed' => [
+            ['@type' => 'City', 'name' => 'Depok'],
+            ['@type' => 'City', 'name' => 'Bogor']
+        ],
+        'description' => 'Layanan internet murah untuk rakyat dengan koneksi fiber optic unlimited tanpa FUP, free instalasi, dan harga terjangkau.',
+        'offers' => [
+            '@type' => 'AggregateOffer',
+            'priceCurrency' => 'IDR',
+            'lowPrice' => isset($packages) && count($packages) > 0 ? $packages->min('price') : 99000,
+            'highPrice' => isset($packages) && count($packages) > 0 ? $packages->max('price') : 299000,
+            'offerCount' => isset($packages) ? count($packages) : 4
+        ]
+    ];
     @endphp
 
     <script type="application/ld+json">{!! json_encode($organizationSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
     <script type="application/ld+json">{!! json_encode($businessSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+    @if(count($faqItems) > 0)
+    <script type="application/ld+json">{!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+    @endif
+    <script type="application/ld+json">{!! json_encode($serviceSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,12 +215,12 @@
                 Internet Pilihan Anak Muda
             </div>
             <h1 class="font-display text-5xl md:text-8xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
-                HARGA YANG PAS <br>
-                <span class="text-gold-gradient drop-shadow-[0_0_20px_rgba(234,179,8,0.3)]">UNTUK KECEPATAN</span> <br>
-                TANPA BATAS.
+                <span class="text-gold-gradient drop-shadow-[0_0_20px_rgba(234,179,8,0.3)]">INTERNET MURAH</span> <br>
+                UNLIMITED TANPA BATAS <br>
+                UNTUK RAKYAT.
             </h1>
             <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-center">
-                Nikmati koneksi <strong>100% Fiber Optic</strong> dengan kuota tanpa batas. Bebas FUP, Bebas Lag, Free Instalasi.
+                <strong>Internet murah</strong> dengan koneksi <strong>100% Fiber Optic</strong> untuk semua kalangan. Kuota tanpa batas, Bebas FUP, Bebas Lag, Free Instalasi.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
                 <a href="#plans" class="relative overflow-hidden group w-full sm:w-auto px-8 py-4 bg-gold-500 text-black rounded-2xl font-bold shadow-[0_0_30px_-5px_rgba(234,179,8,0.5)] hover:shadow-[0_0_50px_-10px_rgba(234,179,8,0.7)] hover:-translate-y-1 transition-all">
@@ -234,8 +285,8 @@
     <section class="py-24 px-6 bg-white/[0.02]">
         <div class="container mx-auto max-w-4xl reveal">
             <div class="text-center mb-12">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">The Difference</span>
-                <h2 class="font-display text-3xl font-bold text-white mt-2 text-center">HyperLink vs Traditional ISP</h2>
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">Internet Murah Berkualitas</span>
+                <h2 class="font-display text-3xl font-bold text-white mt-2 text-center">Kenapa Pilih Internet Rakyat HyperLink?</h2>
             </div>
             <div class="overflow-x-auto rounded-3xl border border-white/10 card-modern">
                 <table class="w-full text-left border-collapse">
@@ -315,8 +366,8 @@
     <section id="plans" class="py-24 px-6 relative bg-white/5 border-y border-white/5">
         <div class="container mx-auto max-w-6xl relative z-10">
             <div class="text-center mb-16 reveal">
-                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">Pilihan Paket</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4 text-center">Pilih Kecepatan Anda</h2>
+                <span class="text-gold-500 font-bold uppercase tracking-wider text-sm text-center">Paket Internet Murah</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-4 text-center">Pilih Paket Internet Rakyat Anda</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
