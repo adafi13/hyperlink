@@ -20,6 +20,10 @@ class MaintenanceModeTest extends TestCase
         $responseAdmin->assertStatus(503);
         $responseAdmin->assertSee('503 Service Unavailable');
 
+        $responseLogin = $this->get('/admin/login');
+        $responseLogin->assertStatus(503);
+        $responseLogin->assertSee('503 Service Unavailable');
+
         $responseRandom = $this->get('/halaman-acak-tidak-ada');
         $responseRandom->assertStatus(503);
         $responseRandom->assertSee('503 Service Unavailable');
