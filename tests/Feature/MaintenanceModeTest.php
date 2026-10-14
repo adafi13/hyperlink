@@ -6,21 +6,23 @@ use Tests\TestCase;
 
 class MaintenanceModeTest extends TestCase
 {
-    public function test_all_routes_return_maintenance_page_with_503(): void
+    public function test_all_routes_return_raw_maintenance_page_with_503(): void
     {
         $responseHome = $this->get('/');
         $responseHome->assertStatus(503);
-        $responseHome->assertSee('Website Sedang Dalam Pemeliharaan');
-        $responseHome->assertSee('Dinonaktifkan Sementara');
-        $responseHome->assertSee('0851-5641-2702');
+        $responseHome->assertSee('503 Service Unavailable');
+        $responseHome->assertSee('nginx');
+        $responseHome->assertDontSee('HyperLink');
+        $responseHome->assertDontSee('0851-5641-2702');
+        $responseHome->assertDontSee('Sekawan Putra Pratama');
 
         $responseAdmin = $this->get('/admin');
         $responseAdmin->assertStatus(503);
-        $responseAdmin->assertSee('Dinonaktifkan Sementara');
+        $responseAdmin->assertSee('503 Service Unavailable');
 
         $responseRandom = $this->get('/halaman-acak-tidak-ada');
         $responseRandom->assertStatus(503);
-        $responseRandom->assertSee('Dinonaktifkan Sementara');
+        $responseRandom->assertSee('503 Service Unavailable');
     }
 
     public function test_json_requests_receive_503_json(): void
@@ -28,9 +30,10 @@ class MaintenanceModeTest extends TestCase
         $response = $this->getJson('/api/anything');
         $response->assertStatus(503);
         $response->assertJson([
-            'status' => 503,
-            'error' => 'Service Unavailable',
+            'message' => 'Service Unavailable',
         ]);
+        $response->assertDontSee('HyperLink');
+        $response->assertDontSee('0851-5641-2702');
     }
 
     public function test_health_check_remains_accessible(): void

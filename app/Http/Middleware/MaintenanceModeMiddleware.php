@@ -45,27 +45,14 @@ class MaintenanceModeMiddleware
         // 4. Jika request berupa API atau JSON request
         if ($request->expectsJson() || $request->is('api/*')) {
             return response()->json([
-                'status'  => 503,
-                'error'   => 'Service Unavailable',
-                'message' => 'Layanan HyperLink sedang dalam proses pemeliharaan sistem berkala (Under Maintenance). Silakan hubungi customer service kami.',
-                'contact' => [
-                    'whatsapp' => '6285156412702',
-                    'url'      => 'https://wa.me/6285156412702',
-                ],
+                'message' => 'Service Unavailable',
             ], 503, [
                 'Retry-After' => '3600',
             ]);
         }
 
-        // 5. Render halaman informasi lengkap pemeliharaan (Full Maintenance Page)
-        return response()->view('maintenance', [
-            'site_name'        => env('APP_NAME', 'HyperLink'),
-            'site_tagline'     => 'Internet Pilihan Anak Muda',
-            'whatsapp_number'  => '6285156412702',
-            'contact_phone'    => '0851-5641-2702',
-            'support_email'    => 'support@hyperlink.net.id',
-            'status'           => 'Sedang Dalam Pemeliharaan Berkala',
-        ], 503, [
+        // 5. Render halaman mentah 503 (tanpa identitas, logo, kontak, ataupun style)
+        return response()->view('maintenance', [], 503, [
             'Retry-After'   => '3600',
             'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
         ]);
