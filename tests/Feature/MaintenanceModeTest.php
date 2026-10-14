@@ -25,6 +25,15 @@ class MaintenanceModeTest extends TestCase
         $responseRandom->assertSee('503 Service Unavailable');
     }
 
+    public function test_bypass_attempt_is_strictly_blocked(): void
+    {
+        // Query bypass must NOT work - must strictly return 503
+        $response = $this->get('/?bypass=hyperlink-dev');
+        $response->assertStatus(503);
+        $response->assertSee('503 Service Unavailable');
+        $response->assertDontSee('HyperLink');
+    }
+
     public function test_json_requests_receive_503_json(): void
     {
         $response = $this->getJson('/api/anything');
@@ -36,25 +45,13 @@ class MaintenanceModeTest extends TestCase
         $response->assertDontSee('0851-5641-2702');
     }
 
-    public function test_health_check_remains_accessible(): void
-    {
-        $response = $this->get('/up');
-        $response->assertStatus(200);
-    }
-
-    public function test_bypass_token_allows_access(): void
-    {
-        $response = $this->get('/up?bypass=hyperlink-dev');
-        $response->assertStatus(200);
-        $response->assertPlainCookie('maintenance_bypass', 'hyperlink-dev');
-    }
-
     public function test_when_maintenance_mode_is_disabled(): void
     {
         putenv('MAINTENANCE_MODE=false');
         $_ENV['MAINTENANCE_MODE'] = 'false';
         $_SERVER['MAINTENANCE_MODE'] = 'false';
 
+        // When maintenance is off, normal routing takes place
         $response = $this->get('/up');
         $response->assertStatus(200);
 
